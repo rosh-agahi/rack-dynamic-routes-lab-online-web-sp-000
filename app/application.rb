@@ -11,7 +11,7 @@ class Application
       resp.write @@items.match(item).price
     else
       resp.write "Item not found"
-      resp.status = 400
+      resp.status = 404
     end
  
     resp.finish
