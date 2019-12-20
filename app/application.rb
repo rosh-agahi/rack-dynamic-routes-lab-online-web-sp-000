@@ -8,7 +8,8 @@ class Application
  
     if req.path == "/items"
       item = req.path.split("/items/").last
-      resp.write @@items.find { |i| i.name == item }.price
+      price_lookup = @@items.find { |i| i.name == item }.price
+      resp.write price_lookup
       
     else
       resp.write "Route not found"
